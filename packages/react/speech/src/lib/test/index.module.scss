@@ -1,0 +1,17 @@
+.container {
+    margin: 0 auto;
+    width: 600px;
+    height: 60p;
+    box-sizing: border-box;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    transition-duration: 300ms;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+}
