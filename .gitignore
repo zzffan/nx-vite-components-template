@@ -2,6 +2,7 @@
 
 # compiled output
 dist
+es
 tmp
 out-tsc
 

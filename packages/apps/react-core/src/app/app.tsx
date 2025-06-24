@@ -9,7 +9,7 @@ import {Speech} from '@bd-cassidy/ai-cape-basic-speech';
 export function App() {
     return (
         <div>
-            <Speech></Speech>
+            <Speech MB={true}></Speech>
             <NxWelcome title="react-core" />
 
             {/* START: routes */}

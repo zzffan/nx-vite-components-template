@@ -1,6 +1,6 @@
 {
     "name": "@bd-cassidy/ai-cape-basic-speech",
-    "version": "0.0.12",
+    "version": "0.0.20",
     "type": "module",
     "exports": "./es/index.js",
     "module": "./es/index.js",
@@ -17,10 +17,30 @@
         "es"
     ],
     "peerDependencies": {
-        "antd": ">=4.0.0",
-        "react": ">=18.0.0"
+        "antd": ">=4.24.16",
+        "react": ">=18.0.0",
+        "ky": ">=1.8.0",
+        "mobx-react": ">=9.0.0",
+        "mobx": ">=6.0.0"
     },
-    "devDependencies": {
-        "react": ">=18.0.0"
+    "peerDependenciesMeta": {
+        "antd": {
+            "optional": true
+        },
+        "mobx": {
+            "optional": true
+        },
+        "ky": {
+            "optional": true
+        },
+        "mobx-react": {
+            "optional": true
+        }
+    },
+    "dependencies": {
+        "antd": "^5.4.0",
+        "ky": "^1.8.1",
+        "mobx-react": "^9.2.0",
+        "mobx": "^6.13.7"
     }
 }

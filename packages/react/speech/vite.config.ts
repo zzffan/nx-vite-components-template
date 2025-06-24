@@ -22,6 +22,16 @@ export default defineConfig(() => ({
             tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
         }),
     ],
+    resolve: {
+        alias: {
+            // 添加工作区包解析
+            '@ai-basic-demo/user': path.resolve(
+                __dirname,
+                '../../models/user/src/index.ts'
+            ),
+            // 其他本地包也可同样配置
+        },
+    },
     // Uncomment this if you are using workers.
     // worker: {
     //  plugins: [ nxViteTsPaths() ],
@@ -52,7 +62,7 @@ export default defineConfig(() => ({
         },
         rollupOptions: {
             // External packages that should not be bundled into your library.
-            external: ['react', 'react-dom', 'react/jsx-runtime', 'antd'],
+            external: ['react', 'react-dom', 'react/jsx-runtime', 'antd', 'ky', 'mobx-react', 'mobx'],
             input: Object.fromEntries(
                 glob
                     .sync('src/**/*.{ts,tsx}', {
@@ -80,7 +90,11 @@ export default defineConfig(() => ({
                     react: 'React',
                     'react-dom': 'React-dom',
                     'react/jsx-runtime': 'react/jsx-runtime',
-                }
+                    'antd': 'antd',
+                    'ky': 'ky',
+                    'mobx-react': 'mobx-react',
+                    'mobx': 'mobx'
+                },
             },
             // input: ['src/index.ts'],
             // output: [
