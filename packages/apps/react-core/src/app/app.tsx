@@ -3,8 +3,8 @@
 import NxWelcome from './nx-welcome';
 
 import { Route, Routes, Link } from 'react-router-dom';
-// import {Speech} from '@baidu/ai-cape-basic-speech';
-import {Speech} from '@bd-cassidy/ai-cape-basic-speech';
+import {Speech} from '@baidu/ai-cape-basic-speech';
+// import {Speech} from '@bd-cassidy/ai-cape-basic-speech';
 
 export function App() {
     return (

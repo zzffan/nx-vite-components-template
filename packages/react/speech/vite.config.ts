@@ -8,6 +8,7 @@ import * as path from 'path';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
 import { fileURLToPath } from 'node:url';
 import { glob } from 'glob';
+import svgr from 'vite-plugin-svgr';
 
 export default defineConfig(() => ({
     root: __dirname,
@@ -21,6 +22,11 @@ export default defineConfig(() => ({
             entryRoot: 'src',
             tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
         }),
+        svgr({
+            svgrOptions: {
+                icon: true, // 优化 SVG 作为图标使用
+            },
+        }),
     ],
     resolve: {
         alias: {
@@ -29,6 +35,7 @@ export default defineConfig(() => ({
                 __dirname,
                 '../../models/user/src/index.ts'
             ),
+            'icons': path.resolve(__dirname, 'src/icons'),
             // 其他本地包也可同样配置
         },
     },
@@ -62,7 +69,15 @@ export default defineConfig(() => ({
         },
         rollupOptions: {
             // External packages that should not be bundled into your library.
-            external: ['react', 'react-dom', 'react/jsx-runtime', 'antd', 'ky', 'mobx-react', 'mobx'],
+            external: [
+                'react',
+                'react-dom',
+                'react/jsx-runtime',
+                'antd',
+                'ky',
+                'mobx-react',
+                'mobx',
+            ],
             input: Object.fromEntries(
                 glob
                     .sync('src/**/*.{ts,tsx}', {
@@ -90,10 +105,10 @@ export default defineConfig(() => ({
                     react: 'React',
                     'react-dom': 'React-dom',
                     'react/jsx-runtime': 'react/jsx-runtime',
-                    'antd': 'antd',
-                    'ky': 'ky',
+                    antd: 'antd',
+                    ky: 'ky',
                     'mobx-react': 'mobx-react',
-                    'mobx': 'mobx'
+                    mobx: 'mobx',
                 },
             },
             // input: ['src/index.ts'],

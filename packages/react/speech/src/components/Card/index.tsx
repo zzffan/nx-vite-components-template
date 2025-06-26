@@ -4,6 +4,8 @@ import styles from './index.module.scss';
 import { Drawer, Button, Table } from 'antd';
 import { User } from '@ai-basic-demo/user';
 
+import DelIcon from 'icons/delete.svg';
+
 interface IProps {
     MB?: boolean;
 }
@@ -64,6 +66,7 @@ const Card: React.FC<IProps> = observer(({MB}) => {
 
     return (
         <div className={styles['container']}>
+            <DelIcon />
             <div className={styles.module}>
                 <h2>测试 传参在宿主环境的表现</h2>
                 是否有参数 MB？ {MB ? '有' : '无'}
